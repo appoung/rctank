@@ -14,3 +14,7 @@ Raspberrypi Rctank! made by Byeong Jun Han
 * RaspberryPi Camera v2
 ## Image
 I will show picture of RaspberryPi Camera Tank soon.
+## Machine Learning
+I will make program that camera recognize what's in infront of tank, and do something.
+* Techablemachine
+* Javascript (Maybe)

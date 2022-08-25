@@ -1,0 +1,92 @@
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class=video style="padding-top:2px;padding-bottom:10px;display:block;margin:10;">
+<img src="{{ url_for('video_feed') }}" style="transform:rotate(90deg);height:1200px;width:1000px;display:block;margin: 0 auto;">
+</div>
+<div id="wrapper">
+<div id="controls">
+<button onclick="foward()" id="keyboard_key_up" class="movements_control"><img id="up"src={{ url_for('static', filename='img/keyboard_key_up.PNG') }}></button>
+<button onclick="left()" id="keyboard_key_left" class="movements_control"><img id="left"src={{ url_for('static', filename='img/keyboard_key_left.PNG') }}></button>
+<button onclick="backward()" id="keyboard_key_down" class="movements_control"><img id="down"src={{ url_for('static', filename='img/keyboard_key_down.PNG') }}></button>
+<button onclick="right()" id="keyboard_key_right" class="movements_control"><img id="right"src={{ url_for('static', filename='img/keyboard_key_right.PNG') }}></button>
+<button onclick="stop()" id="keyboard_key_stop" class="movements_control"><img id="stop" style="width:40px;height:40px;object-fit: cover;" src={{ url_for('static', filename='img/stop.png') }}></button>
+</div>
+</div>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#controls {
+  display: inline-grid;
+  grid-column-gap: 0;
+  align-self: end;
+}
+
+.movements_control {
+  border: solid 1px black;
+  margin: 0;
+  padding: 0;
+}
+
+.movements_control img {
+  width: inherit;
+  height: inherit;
+}
+
+#keyboard_key_up {
+  grid-column-start: 2;
+}
+
+#keyboard_key_left {
+  grid-column-start: 1;
+}
+
+#keyboard_key_down {}
+
+#keyboard_key_right {
+  grid-column-start: 3;
+}
+
+@media (min-width: 721px) {
+  .movements_control {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 720px) {
+  .movements_control {
+    width: 200px;
+    height: 200px;
+  }
+}
+</style>
+<script>
+function foward() {
+	fetch('/foward');
+}
+function backward() {
+	fetch('/backward');
+}
+function right() {
+	fetch('/right');
+}
+function left() {
+	fetch('/left');
+}
+function stop() {
+	fetch('/stop');
+}
+</script>
+
+</body>
+

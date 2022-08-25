@@ -2,6 +2,7 @@
 The whole process to build the tank and write code was done by Byeong Jun Han
 ## Software
 Rctank remote web made by Byeong Jun Han
+* Python3
 * Flask
 * Picamera
 ## Hardware
